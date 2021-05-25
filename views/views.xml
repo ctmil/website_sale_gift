@@ -1,0 +1,9 @@
+<odoo>
+  <data>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Shop">
+      <xpath expr="." position="inside">
+        <script type="text/javascript" src="/website_sale_gift/static/src/js/website_sale_gift.js"></script>
+      </xpath>
+    </template>
+  </data>
+</odoo>
