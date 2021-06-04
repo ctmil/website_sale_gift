@@ -21,3 +21,18 @@ class WebsiteSaleGiftController(WebsiteSale):
 		return {
 			'status': True,
 		}
+
+	@http.route(['/shop/update_note_gift'], type='json', auth='public', methods=['POST'], website=True, csrf=False)
+	def update_eshop(self, **post):
+		results = {}
+		results = self._add_website_sale_note_gift(**post)
+		return results
+
+	def _add_website_sale_note_gift(self, **post):
+		order = request.website.sale_get_order()
+
+		order.note = post['note']
+
+		return {
+			'status': True,
+		}
